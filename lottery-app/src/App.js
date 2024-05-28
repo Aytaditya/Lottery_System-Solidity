@@ -1,23 +1,21 @@
-import logo from './logo.svg';
+/* eslint-disable react-hooks/exhaustive-deps */
+import web3 from './web3';
+import {useEffect,useState} from 'react';
 import './App.css';
 
 function App() {
+  const [accounts,setAccounts]=useState([]); // state to store accounts
+  useEffect(() => {
+    const getAccounts=async()=>{
+      const accounts=await web3.eth.getAccounts();
+      console.log(accounts);
+      setAccounts(accounts);
+    }
+    getAccounts();
+  }, [])
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+        {accounts[0]}
     </div>
   );
 }
