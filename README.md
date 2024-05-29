@@ -53,9 +53,15 @@ This lottery system is built using Solidity version 0.8.11.
     npm run test
     ```
 
+
+
+
 7. **Deployment**: Once testing is complete, deploy the frontend interface to a web server or hosting platform of your choice. Ensure the server is configured to serve the React application correctly, and that it is connected to the deployed smart contract on the blockchain.
+
+![image](./lottery1.png)
 
 ---
 
 By following these steps, you can get your blockchain lottery system up and running, offering a transparent, secure, and user-friendly lottery experience. Enjoy the enhanced transparency and security that blockchain technology brings to the lottery process, and provide a seamless experience for your users with our intuitive React-based frontend.
 ```
+
