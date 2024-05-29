@@ -4,6 +4,8 @@ import web3 from './web3';
 import { useEffect, useState } from 'react';
 import './App.css';
 import lottery from './lottery';
+import {Toaster} from 'react-hot-toast';
+import {toast} from 'react-hot-toast';
 
 function App() {
   const [manager, setManager] = useState('');
@@ -12,10 +14,33 @@ function App() {
 
   const [value, setValue] = useState('');
 
-  const handleSubmit=(e)=>{
+  const handleSubmit=async(e)=>{
     e.preventDefault();
+    if(value<1){
+      toast.error("Please enter a amount more than 1 ether")
+      return
+    }
     console.log(value);
+
+    const accounts = await web3.eth.getAccounts(); // to get the accounts
+    await lottery.methods.enter().send({
+      from: accounts[0],
+      value: web3.utils.toWei(value, 'ether'),
+    });
+
+    toast.success("Entered the lottery successfully")
+    setValue("")
   }
+
+  const pickWinner = async () => {
+    const accounts = await web3.eth.getAccounts();
+    await lottery.methods.pickWinner().send({
+      from: accounts[0],
+    });
+    toast.success("Winner has been picked")
+  }
+
+
 
   useEffect(() => {
     const getManager = async () => {
@@ -30,12 +55,13 @@ function App() {
 
     };
     getManager();
-    console.log(balance)
+    
   }, []);
 
 
   return (
     <>
+    <Toaster />
       <div className='main'>
         <img src="/block.png" alt="blockchain logo" />
         <h2>Lottery Contract</h2>
@@ -56,7 +82,19 @@ function App() {
               <label htmlFor="">Amount of Ether to Enter :</label>
               <input type="text" value={value} onChange={(e)=>setValue(e.target.value)} />
               </div>
+              <div className="bttn">
+              <button className='btn' type='submit'>Enter Lottery</button>
+              </div>
             </form>
+          </div>
+          <hr className='style'/>
+          <div>
+            <div className="heading">
+              <h3>Pick a Winner?</h3>
+            </div>
+            <div className="bttn">
+              <button className='btn' onClick={pickWinner}>Pick a Winner</button>
+            </div>
           </div>
         </div>
 

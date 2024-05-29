@@ -62,6 +62,7 @@ body{
 
   .container{
     display: flex;
+    gap:5rem;
     
   }
 
@@ -69,7 +70,7 @@ body{
     position: relative;
     /* Setting the size of the upper layer to 80% of the screen size*/
       height: 70vh;
-      width: 50vw; 
+      width: 30vw; 
       align-items: center;
       justify-content: space-between;
       padding: 50px;
@@ -114,7 +115,9 @@ body{
   .spacing{
     display: flex;
     flex-direction: column;
-    gap:3px;
+    gap:8px;
+    margin:10px;
+    margin-left:30px;
   }
 
   input{
@@ -123,4 +126,29 @@ body{
     border: 1px solid white;
     border-radius: 5px;
     color:white;
+    height:28px;
+  }
+
+  .btn{
+    background-color: rgb(66, 156, 220);
+    color:white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    cursor: pointer;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    
+  }
+
+  .bttn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .style{
+    color: rgb(147, 144, 142);
+    opacity: 0.2;
   }

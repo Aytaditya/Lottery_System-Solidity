@@ -7,6 +7,11 @@ Welcome to our Blockchain Lottery System! This project combines the transparency
 
 This lottery system is built using Solidity version 0.8.11.
 
+
+![image](./lottery.png)
+
+
+
 ## Features
 
 - **Blockchain Integration**: Our lottery system is built on blockchain technology, ensuring transparency and security throughout the lottery process. The smart contract manages ticket purchases, prize distribution, and result verification.
