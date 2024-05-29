@@ -1,5 +1,126 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
 .red{
-    color:rgb(129, 0, 0);
+    color:rgb(66, 156, 220);
     font-size: 1.5rem;
     font-weight: bold;
+    text-shadow: 1px 1px rgba(165, 189, 254, 0.2);
 }
+body{
+    background: url("/public/blockchain.jpg"), rgba(0, 0, 0, 0.011);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    font-family: Arial, sans-serif;
+    color: white;
+    font-family: "Open Sans", sans-serif;
+    font-optical-sizing: auto;
+    
+}
+.main{
+    display: flex;
+    
+    color:white;
+    align-items: center;
+    justify-items: center;
+    background-color: rgb(12, 12, 12);
+    padding-left: 40px;
+    font-size: 1.1rem;
+}
+
+.upper-layer {
+   
+   
+    position: relative;
+  /* Setting the size of the upper layer to 80% of the screen size*/
+    height: 30vh;
+    width: 50vw; 
+    align-items: center;
+    justify-content: space-between;
+    padding: 50px;
+  
+  /*the alpha value controls the transparency*/
+    background: rgba(67, 67, 67, 0.3);
+  
+  /* This controls the blurring effect*/
+  backdrop-filter: blur( 7.5px );
+    -webkit-backdrop-filter: blur( 7.5px );
+  
+  /*Adding the shadow*/
+  box-shadow: 0 8px 32px 0 rgba(165, 163, 163, 0.18);
+  
+  /* Adding our borders*/
+    border-radius: 15px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+    z-index: 4;
+
+    padding: 20px;
+    margin: 30px;
+    margin-left:10px;
+  }
+
+  .container{
+    display: flex;
+    
+  }
+
+  .lower-layer{
+    position: relative;
+    /* Setting the size of the upper layer to 80% of the screen size*/
+      height: 70vh;
+      width: 50vw; 
+      align-items: center;
+      justify-content: space-between;
+      padding: 50px;
+    
+    /*the alpha value controls the transparency*/
+      background: rgba(67, 67, 67, 0.3);
+    
+    /* This controls the blurring effect*/
+    backdrop-filter: blur( 7.5px );
+      -webkit-backdrop-filter: blur( 7.5px );
+    
+    /*Adding the shadow*/
+    box-shadow: 0 8px 32px 0 rgba(165, 163, 163, 0.18);
+    
+    /* Adding our borders*/
+      border-radius: 15px;
+      border: 1px solid rgba( 255, 255, 255, 0.18 );
+      z-index: 4;
+  
+      padding: 10px;
+      margin: 15px;
+      margin-left:10px;
+  }
+
+  .main img{
+    
+    width: 60px;
+  }
+
+  .heading{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+   
+  }
+
+  label{
+    color:rgb(155, 153, 153);
+  }
+
+  .spacing{
+    display: flex;
+    flex-direction: column;
+    gap:3px;
+  }
+
+  input{
+    width: 40%;
+    background-color: transparent;
+    border: 1px solid white;
+    border-radius: 5px;
+    color:white;
+  }
